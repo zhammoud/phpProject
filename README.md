@@ -19,6 +19,11 @@ DB_PASSWORD=toor
 <p>- php artisan serve</p>
 <br>
 
+##Note
+
+You can access api routes using api prefix:
+ex: .../api/companies
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

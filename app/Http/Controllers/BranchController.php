@@ -156,7 +156,10 @@ class BranchController extends Controller
                 [
                     "branches" =>
                         DB::table('branches')->leftJoin('departments', 'departments.branch_id', '=', 'branches.id')
-                            ->where('company_id', '=', $request->input('company'))
+                            ->where('branches.company_id', '=', $request->input('company'))
+                            ->where('branches.is_visible', '=', 1)
+                            ->where('departments.is_visible', '=', 1)
+                            ->orWhereNull('departments.is_visible')
                             ->select(
                                 'branches.id as branch_id',
                                 'branches.name as branch_name',
